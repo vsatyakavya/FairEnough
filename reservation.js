@@ -22,7 +22,7 @@ $("#submit-btn").on("click", function(event){
         id: $("#id").val()
     };
 
-    if (reservationArray >= 5) {
+    if (reservationArray.length >= 5) {
         postReservation();
     } else {
         postWaitlist();
