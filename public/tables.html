@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fair Enough</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Fair Enough</h1>
+      <h3>Taste the best fried foods in the state of Texas!</h3>
+      <hr>
+      <a href="/add"><button class="btn btn-lg"><span class="fa fa-plus"></span>Make Reservation</button></a>
+      <a href="/api/tables"><button class="btn btn-lg"><span
+            class="fa fa-eye"></span> View Tables</button></a>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Current tables in use -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Current Reservations</h4>
+                </div>
+                <div class="panel-body" id="tableSection">
+                    <div class="well" id="tableWell-1">
+                        <h2>
+                            <span class="label label-primary">1</span>
+                        </h2>
+                    </div>
+                    <div class="well" id="tableWell-2">
+                        <h2>
+                            <span class="label label-primary">2</span>
+                        </h2>
+                    </div>
+                    <div class="well" id="tableWell-3">
+                        <h2>
+                            <span class="label label-primary">3</span>
+                        </h2>
+                    </div>
+                    <div class="well" id="tableWell-4">
+                        <h2>
+                            <span class="label label-primary">4</span>
+                        </h2>
+                    </div>
+                    <div class="well" id="tableWell-5">
+                        <h2>
+                            <span class="label label-primary">5</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- waitlist -->
+            <div class="panel panel-default">
+                <div class="panel panel-heading">
+                    <h4 class="panel-title">Waiting List</h4>
+                </div>
+                <div class="panel-body" id="waitListSection"></div>
+            </div>
+        </div>  
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/api/tables">API Table Link</a>
+                 | 
+                <a href="/api/waitlist">API Wait List</a>
+            </p>
+        </div>
+    </footer>
+  </div>
+</body>
+
+</html>
