@@ -25,12 +25,14 @@ app.post("/api/reserve", function (req, res) {
     reservations.push(newReservation);
     
     res.json(newReservation);
-
-    if (reservations.length > 5) {
+    
+    if (reservations.length < 5) {
         res.sendFile(path.join(__dirname, "reserve.html"));
+        reservations.table = "Reserved";
     }
     else {
         alert("Tables are full! You have been added to the waitlist.");
+        reservations.table = "Waitlist"
         res.sendFile(path.join(__dirname, "reserve.html"));
     }
 });
