@@ -28,10 +28,10 @@ app.get("/api/reservations", function (req, res) {
 });
 
 app.post("/api/reserve", function (req, res) {
+    res.sendFile(path.join(__dirname, "./tables.html"));
     var newReservation = req.body;
     reservations.push(newReservation);
     console.log(reservations);
-    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 app.listen(PORT, function () {
