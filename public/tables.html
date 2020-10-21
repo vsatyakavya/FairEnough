@@ -30,29 +30,34 @@
                     <h4 class="panel-title">Current Reservations</h4>
                 </div>
                 <div class="panel-body" id="tableSection">
-                    <div class="well" id="tableWell-1">
-                        <h2>
+                    <div class="well">
+                        <h2 >
                             <span class="label label-primary">1</span>
+                            <span id="tableWell-1"></span>
                         </h2>
                     </div>
-                    <div class="well" id="tableWell-2">
+                    <div class="well">
                         <h2>
                             <span class="label label-primary">2</span>
+                            <span id="tableWell-2"></span>
                         </h2>
                     </div>
-                    <div class="well" id="tableWell-3">
+                    <div class="well">
                         <h2>
                             <span class="label label-primary">3</span>
+                            <span id="tableWell-3"></span>
                         </h2>
                     </div>
-                    <div class="well" id="tableWell-4">
+                    <div class="well">
                         <h2>
                             <span class="label label-primary">4</span>
+                            <span id="tableWell-4"></span>
                         </h2>
                     </div>
-                    <div class="well" id="tableWell-5">
+                    <div class="well">
                         <h2>
                             <span class="label label-primary">5</span>
+                            <span id="tableWell-5"></span>
                         </h2>
                     </div>
                 </div>
@@ -62,7 +67,9 @@
                 <div class="panel panel-heading">
                     <h4 class="panel-title">Waiting List</h4>
                 </div>
-                <div class="panel-body" id="waitListSection"></div>
+                <div class="panel-body" id="waitListSection">
+                    
+                </div>
             </div>
         </div>  
     </div>
@@ -76,6 +83,32 @@
         </div>
     </footer>
   </div>
+
+<script>
+    const table1 = $("#tableWell-1");
+    const table2 = $("#tableWell-2");
+    const table3 = $("#tableWell-3");
+    const table4 = $("#tableWell-4");
+    const table5 = $("#tableWell-5");
+
+    const waitlistSection = $("#waitListSection");
+
+    for (let i = 1; i <= 5; i++){
+        table[i].html(reservationArray[i].id);
+    }
+    if (reservationArray.length > 5){
+        for (let i = 6; i > reservationArray.length; i++){
+            waitlistSection.append(`<div class="well">
+                        <h2>
+                            <span class="label label-primary">${i}</span>
+                            <span>${reservationArray[i].id}</span>
+                        </h2>
+                    </div>`)
+        }
+    }
+    
+
+</script>
 </body>
 
 </html>
