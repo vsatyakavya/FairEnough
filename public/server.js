@@ -15,26 +15,23 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
 });
 
+app.get("/add", function (req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
 app.get("/tables", function (req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+app.get("/api/reservations", function (req, res) {
+    return res.json(reservations);
+});
+
 app.post("/api/reserve", function (req, res) {
     var newReservation = req.body;
-    console.log(newReservation);
     reservations.push(newReservation);
-    
-    res.json(newReservation);
-    
-    if (reservations.length < 5) {
-        res.sendFile(path.join(__dirname, "reserve.html"));
-        reservations.table = "Reserved";
-    }
-    else {
-        alert("Tables are full! You have been added to the waitlist.");
-        reservations.table = "Waitlist"
-        res.sendFile(path.join(__dirname, "reserve.html"));
-    }
+    console.log(reservations);
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 app.listen(PORT, function () {
