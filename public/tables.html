@@ -87,6 +87,9 @@
   </div>
 
 <script>
+
+    $.get("/api/reservations/", function(data) {
+
     const table1 = $("#tableWell-1");
     const table2 = $("#tableWell-2");
     const table3 = $("#tableWell-3");
@@ -96,14 +99,14 @@
     const waitlistSection = $("#waitListSection");
 
     for (let i = 1; i <= 5; i++){
-        table[i].html(reservationArray[i].id);
+        table[i].html(data[i].id);
     }
-    if (reservationArray.length > 5){
-        for (let i = 6; i > reservationArray.length; i++){
+    if (data.length > 5){
+        for (let i = 6; i > data.length; i++){
             waitlistSection.append(`<div class="well">
                         <h2>
                             <span class="label label-primary">${i}</span>
-                            <span>${reservationArray[i].id}</span>
+                            <span>${data[i].id}</span>
                         </h2>
                     </div>`)
         }
