@@ -1,18 +1,4 @@
-// reservationArray is the array of objects for each 
 
-function postReservation() {
-    $.post("/api/tables", newReservation)
-        .then(function(data){
-            console.log("Reservation: " + data);
-        })
-}
-
-function postWaitlist() {
-    $.post("/api/waitlist", newReservation)
-        .then(function(data){
-            console.log("Waitlist Reservation: " + data);
-        })
-}
 
 $("#submit-btn").on("click", function(event){
     const newReservation = {
@@ -21,13 +7,10 @@ $("#submit-btn").on("click", function(event){
         email: $("#email").val(),
         id: $("#id").val()
     };
-
-    if (reservationArray >= 5) {
-        postReservation();
-    } else {
-        postWaitlist();
-    }
+    $.post("/api/reserve", newReservation)
+        .then(function(data){
+            console.log("Reservation: " + data);
+        })
 })
 
 module.exports = Reservation
-
